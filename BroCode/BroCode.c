@@ -45,18 +45,5 @@ int main(void)
     printf("%d\n",c);
     printf("%c\n",c);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     return (0);
 }
