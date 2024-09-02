@@ -62,16 +62,16 @@ int main(void)
     } */
    
    //control structures
-   int Grade = 0;
+   /* int Grade = 0;
    printf("Grade : ");
    scanf("%d",&Grade);
-   
+
    if(Grade >= 90) printf("Passed GPA : A\n");
    else if(Grade >= 80) printf("Passed GPA : B\n");
    else if(Grade >= 70) printf("Passed GPA : C\n");
    else if(Grade >= 60) printf("Passed GPA : D\n");
    else if(Grade >= 50) printf("Passed GPA : E\n");
-   else printf("Failed\n");
+   else printf("Failed\n"); */
    
    return (0);
 }
