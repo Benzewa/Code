@@ -73,5 +73,46 @@ int main(void)
    else if(Grade >= 50) printf("Passed GPA : E\n");
    else printf("Failed\n"); */
    
-   return (0);
+   // looping
+   //while loop
+   
+   /* int i = 0;
+   while (i < 5)
+   {
+    printf("i : %d\n",i);
+    i+=1;
+   } */
+
+    /* int i = 0;
+    int Sum = 0;
+    while (i < 5)
+    {
+        Sum += i;
+        i += 1;
+    }
+    printf("The Sum is %d\n",Sum); */
+
+    /* int i = 0;
+    int Num = 0;
+    int Sum = 0;
+    while (i < 5)
+    {
+        printf("Enter Num %d\n",i+1);
+        scanf("%d",&Num);
+        Sum += Num;
+        i += 1;
+    }
+    printf("The Sum is %d\n",Sum); */
+
+
+    // infinte loop until user enter -1
+    int i = 0;
+    while(i != -1)
+    {
+        printf("Enter A Number : ");
+        scanf("%d",&i);
+    }
+
+
+    return (0);
 }
