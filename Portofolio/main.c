@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+
 int main(void)
 {
 	//*****part 1*****//
@@ -9,7 +10,7 @@ int main(void)
 	printf("Hello World\n");
 	int	speed;
 	speed = 0;
-    int	time;
+	int	time;
 	time = 0;
 	printf("Speed : ");
 	scanf("%d", &speed);
