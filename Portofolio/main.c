@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 int main(void)
 {
     //*****part 1*****//
@@ -119,12 +120,16 @@ int main(void)
     printf("Max number is %d\n", max); */
 
     // arrays
-    int Grade[5] = {};
-    Grade[0] = 92;
+    // int Grade[5] = {};
+    /* Grade[0] = 92;
     Grade[1] = 97;
     Grade[2] = 72;
     Grade[3] = 82;
-    Grade[4] = 99;
+    Grade[4] = 99; */
+
+    /* int Grade[5] = {92, 97, 72, 82, 99};
+    int Grade[] = {92, 97, 72, 82, 99}; //you dont need to initialize the array size
+
 
     int i = 0;
     while (i < 5)
@@ -143,7 +148,55 @@ int main(void)
         Counter++;
     }
     printf("The Total Grades is %d\n", TotalGrades);
-    printf("The Average of Grades is %d\n", (TotalGrades / Counter));
+    printf("The Average of Grades is %d\n", (TotalGrades / Counter)); */
+
+    // strings in C
+    /* char S1[5] = {'a', 'b', 'c', 'd', '\0'};
+    char S2[5] = "abcd\0";
+
+    printf("%s\n",S1);
+    printf("%s\n",S2);
+
+    char S3[] = "This is My String.\0";
+    printf("%s\n",S3);
+
+    int i = 0;
+    while (i<=18)
+    {
+        if(S3[i] == '\0')
+            printf("s3[%.2d] = \\0",i); //to print the null Terminator Symbol
+        else
+            printf("s3[%.2d] = %c\n",i,S3[i]);
+        i++;
+    }
+
+    printf("\n%s\n",S3); */
+
+    /* char S1[20];
+    printf("Enter A String\n");
+    scanf("%s", S1); // we dont use the & here because the string is the address of the first letter by default
+    printf("%s\n", S1);
+
+    int i = 0;
+    int counter = 0;
+    while (i < 20)
+    {
+        if (S1[i] != '\0')
+            counter++;
+        else
+            break;
+        i++;
+    }
+    printf("The length of the string is %d\n",counter); */
+
+
+    char S1[] = "This is the way.";
+    int S1len = strlen(S1);
+    printf("length %d",S1len);
+
+
+
+
 
     return (0);
 }
