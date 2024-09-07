@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 int main(void)
+
 {
     //*****part 1*****//
     // comment option shift a
@@ -193,10 +194,6 @@ int main(void)
     char S1[] = "This is the way.";
     int S1len = strlen(S1);
     printf("length %d",S1len);
-
-
-
-
 
     return (0);
 }
