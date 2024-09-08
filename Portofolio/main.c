@@ -22,93 +22,93 @@ int main(void)
 	*/
 
 	//*****part 2*****//
-    /*
+	/*
 	float x = 1.234;
-    double y = 1.234;
+	double y = 1.234;
 
 	printf("x : ");
-    scanf("%f", &x);
-    printf("x = %f\n", x);
+	scanf("%f", &x);
+	printf("x = %f\n", x);
 	printf("y : ");
-    scanf("%lf", &y);
-    printf("y = %lf\n", y); //%f could be used with doubles 
+	scanf("%lf", &y);
+	printf("y = %lf\n", y);
+
+	//%f could be used with doubles 
 	*/
 	/*
 	char c = 'd';
-    printf("c : ");
-    scanf("%c", &c);
-    printf("c = %c\n", c);
-    // to show the ascii value
-    printf("c = %d\n", c);
+	printf("c : ");
+	scanf("%c", &c);
+	printf("c = %c\n", c);
+
+	// to show the ascii value
+	printf("c = %d\n", c);
 	*/
 	/*
 	double x = 5.2;
-    double y = 2.5;
-    double multi = x * y;
-    double add = x + y;
-    double div = x / y;
-    double sub = x - y;
+	double y = 2.5;
+	double multi = x * y;
+	double add = x + y;
+	double div = x / y;
+	double sub = x - y;
 
-    printf("multiplication : %f\n", multi);
-    printf("addition : %f\n", add);
-    printf("division : %f\n", div);
-    printf("subtraction : %f\n", sub); */
-
+	printf("multiplication : %f\n", multi);
+	printf("addition : %f\n", add);
+	printf("division : %f\n", div);
+	printf("subtraction : %f\n", sub); */
     /*
+
 	int x = 11, y = 3;
-    int div = x / y;
-    int mod = x % y;
-    printf("div = %d\n", div);
-    printf("mod = %d\n", mod);
+	int div = x / y;
+	int mod = x % y;
+	printf("div = %d\n", div);
+	printf("mod = %d\n", mod);
 	*/
-
-    // mod %2 == 0 even
-    // mod % 2 == 1 odd
-
+	// mod %2 == 0 even
+	// mod % 2 == 1 odd
     /*
 	int x = 4;
-    int mod = x % 2;
-    if (mod)
-    {
-        printf("odd\n");
-    }
+	int mod = x % 2;
+
+	if (mod)
+	{
+		printf("odd\n");
+	}
 	*/
 
-    // control structures
+	// control structures
     /*
 	int Grade = 0;
-    printf("Grade : ");
-    scanf("%d",&Grade);
+	printf("Grade : ");
+	scanf("%d",&Grade);
 
-    if(Grade >= 90) printf("Passed GPA : A\n");
-    else if(Grade >= 80) printf("Passed GPA : B\n");
-    else if(Grade >= 70) printf("Passed GPA : C\n");
-    else if(Grade >= 60) printf("Passed GPA : D\n");
-    else if(Grade >= 50) printf("Passed GPA : E\n");
-    else printf("Failed\n");
+	if(Grade >= 90) printf("Passed GPA : A\n");
+	else if(Grade >= 80) printf("Passed GPA : B\n");
+	else if(Grade >= 70) printf("Passed GPA : C\n");
+	else if(Grade >= 60) printf("Passed GPA : D\n");
+	else if(Grade >= 50) printf("Passed GPA : E\n");
+	else printf("Failed\n");
 	*/
 
-    // looping
-    // while loop
-
-    /*
+	// looping
+	// while loop
+	/*
 	int i = 0;
-    while (i < 5)
-    {
-     printf("i : %d\n",i);
-     i+=1;
-    }
+	while (i < 5)
+	{
+	printf("i : %d\n",i);
+	i+=1;
+	}
 	*/
-
     /*
 	int i = 0;
-    int Sum = 0;
-    while (i < 5)
-    {
-        Sum += i;
-        i += 1;
-    }
-    printf("The Sum is %d\n",Sum);
+	int Sum = 0;
+	while (i < 5)
+	{
+		Sum += i;
+		i += 1;
+	}
+	printf("The Sum is %d\n",Sum);
 	*/
 
     /*
@@ -220,9 +220,10 @@ int main(void)
     }
     printf("The length of the string is %d\n",counter); */
 
-    char S1[] = "This is the way.";
+    /* char S1[] = "This is the way.";
     int S1len = strlen(S1);
-    printf("length %d",S1len);
+    printf("length %d",S1len); */
+
     
     return (0);
 }
