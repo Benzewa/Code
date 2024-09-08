@@ -223,6 +223,6 @@ int main(void)
     char S1[] = "This is the way.";
     int S1len = strlen(S1);
     printf("length %d",S1len);
-
+    
     return (0);
 }
