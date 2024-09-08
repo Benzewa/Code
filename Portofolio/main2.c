@@ -4,7 +4,7 @@
 int	main(void)
 {
 	printf("Hello World\n");
-	printf("My Name Is\nMoutaz\nSami\nShaban\n");
+	printf("My Name is Moutaz Sami Shaban\n");
 
 	return (0);
 }
