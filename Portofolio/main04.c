@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 int main(void)
 {
 	int *Numbers;
 	int Size;
+	
 	Size = 2;
-
 	Numbers = malloc(sizeof(int) * Size);
 	if(Numbers == NULL)
 	{
