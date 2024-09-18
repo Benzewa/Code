@@ -1,6 +1,8 @@
 #include <stdio.h>
 //stopped at 01:45
 int FindMax(int x, int y); // function prototype
+//function prototypes are usually used in Header Files
+//better code readanlity
 
 int main(void)
 {
