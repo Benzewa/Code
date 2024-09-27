@@ -1,23 +1,20 @@
 #include <unistd.h>
-void ft_print_reverse_alphabet(void)
+void	ft_print_reverse_alphabet(void);
+int	main(void)
 {
-    int count;
+	ft_print_reverse_alphabet();
+	return (0);
+}
+void	ft_print_reverse_alphabet(void)
+{
+	char	c;
 
-    count = 122;
-    while(count>=97)
-    {
-        write(1,&count,1);
-        count--;
-    }
-}
-void ft_print_reverse_alphabet2(void)
-{
-    write(1,"zyxvwutsrqponmlkjihgfedcba",26);
-}
-int main(void)
-{
-    ft_print_reverse_alphabet();
-    write(1,"\n",1);
-    ft_print_reverse_alphabet2();
-    return (0);
+	c = 'z';
+	while (c >= 'a')
+	{
+		write (1, &c, 1);
+		write (1, " ", 1);
+		c -= 1;
+	}
+	write (1, "\n", 1);
 }

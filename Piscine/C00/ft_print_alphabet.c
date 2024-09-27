@@ -1,23 +1,19 @@
 #include <unistd.h>
-void ft_print_alphabet(void)
-{
-    char    count;
-
-    count = 'a';
-    while (count <= 'z')
-    {
-        write(1,&count,1);
-        count++;
-    }
-}
-void ft_print_alphabet2(void)
-{
-    write(1,"abcdefghijklmnopqrstuvxyz",26);
-}
+void ft_print_alphabet(void);
 int main(void)
 {
-    ft_print_alphabet();
-    write(1,"\n",1);
-    ft_print_alphabet2();
-    return (0);
+	ft_print_alphabet();
+}
+void ft_print_alphabet(void)
+{
+	char	c;
+
+	c = 'a';
+	while (c <= 'z')
+	{
+		write(1, &c, 1);
+		write(1, " ", 1);
+		c++;
+	}
+	write(1, "\n", 1);
 }
