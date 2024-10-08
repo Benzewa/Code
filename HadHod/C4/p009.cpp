@@ -15,7 +15,7 @@ void PrintName(string FullName);
 
 int main(void)
 {
-	PrintName(GetFullName(ReadInfo(), true));
+	PrintName(GetFullName(ReadInfo(), false));
 }
 
 stInfo ReadInfo()
