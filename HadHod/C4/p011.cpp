@@ -10,6 +10,7 @@ void PrintRes(int enPass);
 
 int main(void)
 {
+	
 	PrintRes(ReadNum());
 	return 0;
 }
