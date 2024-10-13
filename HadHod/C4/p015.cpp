@@ -11,9 +11,9 @@ int main(void)
 {
     int Num1, Num2, Num3;
     ReadNums(Num1, Num2, Num3);
-    cout<<"sum : ";
+    cout << "sum : ";
     PrintRes(Sum(Num1, Num2, Num3));
-    cout<<"\nAvg : ";
+    cout << "\nAvg : ";
     PrintRes(Avg(Num1, Num2, Num3));
     return 0;
 }
@@ -32,7 +32,7 @@ int Sum(int Num1, int Num2, int Num3)
 }
 double Avg(int Num1, int Num2, int Num3)
 {
-    return Sum(Num1, Num2, Num3) / 3.0;
+    return (double)Sum(Num1, Num2, Num3) / 3.0;
 }
 void PrintRes(int Sum)
 {
