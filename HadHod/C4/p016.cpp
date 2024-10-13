@@ -38,7 +38,8 @@ int SumNums(int Num1, int Num2, int Num3)
 }
 double AvgNums(int Num1, int Num2, int Num3)
 {
-	return (double)SumNums(Num1, Num2, Num3) / 3.0; // 2 ways of casting
+	return (double)SumNums(Num1, Num2, Num3) / 3.0;
+	// 2 ways of casting
 }
 enPass Check(double Avg)
 {
