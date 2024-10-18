@@ -18,6 +18,7 @@ void ReadNums(int &Length, int &Width)
     cout << "Please Enter Lenght\n";
     cin >> Length;
     cout << "Please Enter Width\n";
+    cout<< "Hello Word\n";
     cin >> Width;
 }
 int CalculateArea(int Length, int Width)
