@@ -6,34 +6,36 @@
 #include <string>
 using namespace std;
 
-double NumHours();
-double CalcDays(int Num);
-int CalcWeeks(double Num);
-void print(int Weeks, int Days);
+double ReadNumHours(string Message);
+double CalcWeeks(double Num);
+double CalcDays(double Num);
+void Print(double Weeks);
 
 int main()
 {
-    double Hours = NumHours();
-    cout <<"Weeks : "<< CalcWeeks(Hours) << " Days : " << CalcDays(Hours);
+    double Hours = ReadNumHours("How Many Hours (positive): ");
+    cout << "Weeks : " << CalcWeeks(Hours) << "\n";
+    cout << "Days  : " << CalcDays(Hours) << "\n";
 }
-double NumHours()
+double ReadNumHours(string Message)
 {
-    int Num;
-    cout << "How Many Hours : ";
-    cin >> Num;
+    int Num = -1;
+    for (;Num <= 0;)
+    {
+        cout << Message;
+        cin >> Num;
+    }
     return Num;
 }
-double CalcDays(int Num)
+double CalcWeeks(double Num)
 {
-    double Days = (Num % 168);
-    Days = Days * 7;
-    return Days;
+    return ((double)Num / 168);
 }
-int CalcWeeks(double Num)
+double CalcDays(double Num)
 {
-    return (Num / 168);
+    return (CalcWeeks(Num) * 7);
 }
-void print(int Weeks, int Days)
+void Print(double Weeks)
 {
-    cout << "Weeks : " << Weeks << "Days : " << Days;
+    cout << "Weeks : " << Weeks;
 }
