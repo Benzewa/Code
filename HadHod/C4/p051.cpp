@@ -33,8 +33,8 @@ int Read(string Message)
 stDuration ReadDuration()
 {
     stDuration Duration;
-    Duration.Days = Read("Please Enter Num Of Days : ");
-    Duration.Hours = Read("Please Enter Num Of Hours : ");
+    Duration.Days = Read("Please  Enter  Num Of  Days : ");
+    Duration.Hours = Read("Please  Enter Num  Of Hours : ");
     Duration.Minutes = Read("Please Enter Num Of Minutes : ");
     Duration.Seconds = Read("Please Enter Num Of Seconds : ");
     return Duration;
