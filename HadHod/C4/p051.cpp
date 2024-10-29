@@ -1,44 +1,47 @@
 // Task In Seconds
 #include <iostream>
+#include <string>
 using namespace std;
 
 struct stDuration
 {
-    int Days = 0;
-    int Hours = 0;
-    int Minutes = 0;
-    int Seconds = 0;
+    int Days;
+    int Hours;
+    int Minutes;
+    int Seconds;
 };
 
-void Read(int &Num, string Message);
-double Calc(int Days, int Hours, int Minutes, int Seconds);
+int Read(string Message);
+stDuration ReadDuration();
+double Calc(stDuration Task);
 void Print(double Num);
 
 int main()
 {
-    Print(Calc(Days, Hours, Minutes, Seconds));
+    Print(Calc(ReadDuration()));
 }
-void Read(int &Num, string Message)
+int Read(string Message)
 {
-    cout << Message;
-    cin >> Num;
+    int Num = -10;
+    for (;Num < 0;)
+    {
+        cout << Message;
+        cin >> Num;
+    }
+    return Num;
 }
 stDuration ReadDuration()
 {
     stDuration Duration;
-    cout << "Enter Days : ";
-    cin >> Duration.Days;
-    cout << "Enter Hours : ";
-    cin >> Duration.Hours;
-    cout << "Enter Minutes : ";
-    cin >> Duration.Minutes;
-    cout << "Enter Seconds : ";
-    cin >> Duration.Seconds;
+    Duration.Days = Read("Please Enter Num Of Days : ");
+    Duration.Hours = Read("Please Enter Num Of Hours : ");
+    Duration.Minutes = Read("Please Enter Num Of Minutes : ");
+    Duration.Seconds = Read("Please Enter Num Of Seconds : ");
     return Duration;
 }
-double Calc(int Days, int Hours, int Minutes, int Seconds)
+double Calc(stDuration Task)
 {
-    return (24*60*60*Days)+(60*60*Hours)+(60*Minutes)+Seconds;
+    return(24*60*60*Task.Days)+(60*60*Task.Hours)+(60*Task.Minutes)+Task.Seconds;
 }
 void Print(double Num)
 {
