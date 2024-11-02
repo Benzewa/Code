@@ -10,11 +10,12 @@ enDay Check();
 string GetDay(enDay Day);
 int main()
 {
+    cout<<GetDay(Check());
 }
 int Read(string Message)
 {
-    int i = 10;
-    for (;i <= 1 && i <= 7;)
+    int i = 0;
+    for (;i < 1 || i > 7;)
     {
         cout << Message << "\n";
         cin >> i;
@@ -23,24 +24,22 @@ int Read(string Message)
 }
 enDay Check()
 {
-    return (enDay)Read("Please Enter Day : ");
+    return (enDay)Read("Please Enter Day : "); //casting
 }
 string GetDay(enDay Day)
 {
     if(Day == 1)
-        cout << "SunDay";
+        return "SunDay";
     else if(Day == 2)
-        cout << "MonDay";
+        return "MonDay";
     else if(Day == 3)
-        cout << "TuesDay";
+        return "TuesDay";
     else if(Day == 4)
-        cout << "WednesDay";
+        return "WednesDay";
     else if(Day == 5)
-        cout << "ThursDay";
+        return "ThursDay";
     else if(Day == 6)
-        cout << "FriDay";
-    else if(Day == 7)
-        cout << "SaturDay";
-    else if(Day == 8)
-        cout << "InValid";
+        return "FriDay";
+    else
+        return "SaturDay";
 }
