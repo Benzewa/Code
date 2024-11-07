@@ -30,4 +30,3 @@ bool IsPerfect(int Num)
     }
     return Sum == Num;
 }
-o
