@@ -1,5 +1,6 @@
 // C5 vid 8
 // count Freq of A number in a number
+// still not conpleted 
 
 #include <iostream>
 #include <string>
