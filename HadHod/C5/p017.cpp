@@ -30,10 +30,8 @@ int Reverse(int Num)
     while(Num > 0)
     {
         Rem = Num % 10;
-        RevNum += Rem;
         Num /= 10;
-        if(Num != 0)
-            RevNum *= 10;
+        RevNum = RevNum * 10 + Rem;
     }
     return RevNum;
 }

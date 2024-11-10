@@ -36,9 +36,7 @@ int Reversed (int Num)
     {
         Rem = Num % 10;
         Num /= 10;
-        RevNum += Rem;
-        if(Num > 0)
-            RevNum *= 10;
+        RevNum = RevNum * 10 + Rem;
     }
     return RevNum;
 }
