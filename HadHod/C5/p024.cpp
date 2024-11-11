@@ -1,9 +1,10 @@
-// pattern
-// vid 13 C5
+// vid 14 C5
+// Print Alphabet Pattern
 
 #include <iostream>
 #include <string>
 using namespace std;
+
 int ReadNum(string Msg);
 void Print(int Num);
 
@@ -14,20 +15,20 @@ int main()
 int ReadNum(string Msg)
 {
     int Num = 0;
-    while(Num <= 0)
+    for (;Num <= 0;)
     {
         cout << Msg;
         cin >> Num;
     }
-    return Num;
+    return Num + 64;
 }
 void Print(int Num)
 {
-    for(int i = 1; i <= Num;i++)
+    for(int i = Num;i >= 65;i--)
     {
-        for(int j = 1;j <= i;j++)
+        for(int j = 65;j <= i;j++)
         {
-            cout << i << " ";
+            cout << (char)i << " ";
         }
         cout << "\n";
     }
