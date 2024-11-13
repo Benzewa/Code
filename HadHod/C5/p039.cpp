@@ -27,6 +27,8 @@ void Print(int From, int To)
     {
         printf("Random %.2d : %d\n", i, Random(From, To));
         if ((i % 5) == 0)
+        {
             cout << "\n";
+        }
     }
 }
