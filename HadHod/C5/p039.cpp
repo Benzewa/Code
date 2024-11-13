@@ -3,10 +3,8 @@
 
 #include <iostream>
 #include <string>
-//for Random
-#include <cstdlib>
-//printf
-#include <cstdio>
+#include <cstdlib> //For Random
+#include <cstdio>  //Printf
 using namespace std;
 
 int Random(int From, int To);
@@ -16,7 +14,7 @@ int main()
     // Seed
     srand((unsigned)time(NULL));
     printf("\n");
-    Print(1,5);
+    Print(1, 5);
 }
 int Random(int From, int To)
 {
@@ -24,10 +22,10 @@ int Random(int From, int To)
 }
 void Print(int From, int To)
 {
-    for(int i = 1;i <= 50;i++)
+    for (int i = 1; i <= 50; i++)
     {
         printf("Random %.2d : %d\n", i, Random(From, To));
-        if((i % 5) == 0)
+        if ((i % 5) == 0)
             cout << "\n";
     }
 }
