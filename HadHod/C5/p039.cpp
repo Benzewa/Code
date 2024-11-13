@@ -9,6 +9,7 @@ using namespace std;
 
 int Random(int From, int To);
 void Print(int From, int To);
+
 int main()
 {
     // Seed
