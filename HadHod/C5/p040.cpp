@@ -14,7 +14,6 @@ int ReadNum(string Msg);
 int main()
 {
     srand((unsigned)time(NULL));
-    cout << "Random Num in Range \n";
     int From = ReadNum("Please Enter A Num : ");
     int To = ReadNum("Please Enter A Num : ");
     Print(From, To);
@@ -25,9 +24,11 @@ int Random(int From, int To)
 }
 void Print(int From, int To)
 {
-    for (int i = 0; i <= 20; i++)
+    for (int i = 1; i <= 50; i++)
     {
-        cout << Random(From, To);
+        printf("%02d ", Random(From, To));
+        if (i % 5 == 0)
+            cout << "\n";
     }
 }
 int ReadNum(string Msg)
