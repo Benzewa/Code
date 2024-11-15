@@ -1,6 +1,3 @@
-// vid 23 C5
-// Fill Array of Max size 100 with random numbers from 1 to 100
-
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -11,6 +8,7 @@ int ReadNum(string Msg);
 int Random(int From, int To);
 void ReadArr(int Arr[100], int &ArrSize);
 void PrintArr(int Arr[100], int ArrSize);
+int Max(int Arr[100], int ArrSize);
 
 int main()
 {
@@ -20,6 +18,7 @@ int main()
 
     ReadArr(Arr, ArrSize);
     PrintArr(Arr, ArrSize);
+    cout << "\n" << "Max is : " << Max(Arr,ArrSize) << "\n";
 }
 int ReadNum(string Msg)
 {
@@ -53,4 +52,14 @@ void PrintArr(int Arr[100], int ArrSize)
     {
         cout << Arr[i] << " ";
     }
+}
+int Max(int Arr[100], int ArrSize)
+{
+    int Max = 0;
+    for(int i = 0; i < ArrSize; i++)
+    {
+        if(Arr[i] > Max)
+            Max = Arr[i];
+    }
+    return Max;
 }
