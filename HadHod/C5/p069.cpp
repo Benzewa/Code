@@ -19,7 +19,6 @@ int main()
 {
     int Arr[100] = {};
     int ArrSize = 0;
-
     FillArr(Arr, ArrSize);
     cout << "Arr 1 Elements : ";
     PrintArr(Arr, ArrSize);
@@ -71,7 +70,6 @@ void Shuffle(int Arr[100], int ArrSize)
 {
     for(int i = 0;i < ArrSize;i++)
     {
-        Swap(Arr[Random(Arr[0], Arr[ArrSize - 1])], 
-                Arr[Random(Arr[0], Arr[ArrSize - 1])]);
+        Swap(Arr[Random(Arr[0], Arr[ArrSize - 1])],Arr[Random(Arr[0], Arr[ArrSize - 1])]);
     }
 }
