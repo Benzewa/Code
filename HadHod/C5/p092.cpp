@@ -22,12 +22,13 @@ int main()
 }
 void FillArr(int Arr[100],int &ArrSize)
 {
-    ArrSize = 5;
+    ArrSize = 6;
     Arr[0] = 1;
     Arr[1] = 2;
     Arr[2] = 3;
-    Arr[3] = 2;
-    Arr[4] = 1;
+    Arr[3] = 3;
+    Arr[4] = 2;
+    Arr[5] = 1;
 }
 void PrintArr(int Arr[100],int ArrSize)
 {
