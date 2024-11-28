@@ -1,0 +1,20 @@
+syntax on
+filetype on
+set tabstop=4
+set autoindent
+set number
+set shiftwidth=4
+set smartindent
+set cindent
+set noswapfile
+set expandtab
+set softtabstop=4
+set textwidth=110
+set wrapmargin=20
+set showmatch
+set nobackup
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
