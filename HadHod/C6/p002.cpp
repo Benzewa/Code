@@ -2,28 +2,27 @@
 // Ternary Operator (Short Hand If)
 
 #include <iostream>
+#include <string>
 #include <cstdlib> //random
 #include <ctime> //random
 using namespace std;
 
 int Random(int From,int To);
-void PosOrNeg(int Num);
-
+string Result(int Num);
 int main()
 {
     srand((unsigned)time(NULL));
-    int Num = Random(-5,5);
+    int Num = Random(0,100);
     cout << Num << "\n";
-    PosOrNeg(Num);
+    cout << Result(Num);
 }
 int Random(int From,int To)
 {
     return rand() % (To - From + 1) + From;
 }
-void PosOrNeg(int Num)
+string Result(int Num)
 {
-    (Num > 0) ? cout << "Positive\n" : (Num < 0) ? cout << "Negative\n" : cout << "Zero\n";
-
-    // Mutiple Conditon Ternary
-    // (Condition) ? cout/return : (Condition) ? cout/return;
+    string Result;
+    Result = (Num >= 50) ? "Pass\n" : "Fail\n";
+    return Result;
 }

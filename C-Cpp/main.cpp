@@ -15,6 +15,17 @@ int main()
     string str = "Moutaz Sami Shaban";
     getline(cin,str);
     cout << "The String is : " << str << "\n";
+    char c = str[0];
 
+    // Also could be Handled in this way
+    char str2[] = "Hello World";
+    char str3[6] = "Hello";
+
+    // Diff 4 (Memory Allocation)
+
+
+    // Diff 5 (bool)
+    bool flag = true;
+    bool flag = false;
     return 0;
 }
