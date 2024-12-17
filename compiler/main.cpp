@@ -17,5 +17,6 @@ int main()
     for(int i = 0;i < 10;i++)
         cout << MathFun::Random(1,99) << " ";
     cout << "\n";
+    cout << "Hello World\n";
     return 0;
 }
