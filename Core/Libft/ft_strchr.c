@@ -1,58 +1,20 @@
 #include <stdio.h>
-#include <limits.h> // For CHAR_MIN and CHAR_MAX
-// ft_strlen: Returns the length of the string, excluding the null terminator.
-size_t ft_strlen(const char *s)
+
+char *ft_strchr(const char *s, int c)
 {
-    // Handle NULL pointer case to avoid crashing
-    if (s == NULL)
-    {
-        return 0; // If the string is NULL, return 0
-    }
+    unsigned char uc = (unsigned char)c; // Cast c to unsigned char
+    int i = 0;
 
-    size_t length = 0;
-    // Loop through each character until we find the null terminator
-    while (s[length] != '\0')
-    {
-        length++; // Increase the length for each character
-    }
-
-    return length; // Return the total length of the string
-}
-// strchr: Finds the first occurrence of character c in the string s
-char *strchr(const char *s, int c)
-{
-    // Handle invalid input for 'c' if it's out of the 'char' range
-    if (c < CHAR_MIN || c > CHAR_MAX)
-    {
-        return NULL; // If c is out of the valid char range, return NULL
-    }
-
-    // Ensure the string is not NULL before proceeding
-    if (s == NULL)
-    {
-        return NULL; // If the string is NULL, return NULL
-    }
-
-    size_t i = 0;
-    // Loop through the string using array indexing style
     while (s[i] != '\0')
-    { // Continue until the null terminator
-        if (s[i] == (char)c)
-        {                         // If the current character matches 'c'
-            return (char *)&s[i]; // Return the pointer to the current character
-        }
-        i++; // Move to the next character in the string
-    }
-
-    // If we have reached here, the character was not found.
-    // Special case: If we are looking for the null terminator '\0'
-    if (c == '\0')
     {
-        return (char *)&s[i]; // Return the pointer to the null terminator
+        if (s[i] == uc)
+        { // Compare with the casted value
+            return (char *)&s[i];
+        }
+        i++;
     }
 
-    // Return NULL if the character 'c' is not found in the string
-    return NULL;
+    return NULL; // Return NULL if character is not found
 }
 
 int main()

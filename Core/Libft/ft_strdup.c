@@ -2,41 +2,22 @@
 #include <string.h>
 #include <stdlib.h>
 
-size_t ft_strlen(const char *s)
-{
-    // str == NULL means the
-    if (s == NULL)
-    {
-        return (size_t)-1; // handle NULL Pointer
-    }
-    size_t length = 0;
-    while (s[length] != '\0')
-        length++;
-    return length;
-}
-
 char *ft_strdup(const char *s1)
 {
-    // check is input string is NULL
-    if (s1 == NULL)
-        return NULL;
-    size_t s1Len = ft_strlen(s1) + 1;   // make space for NULL terminator
-    char *copy = (char *)malloc(s1Len); // dont mutiple bcs each char is one byte
+    // Get the length of the input string
+    size_t len = ft_strlen(s1);
 
-    // check if malloc failed
-    if (copy == NULL)
-    {
-        return NULL; // malloc failed
-    }
+    // Allocate memory for the duplicate string (+1 for the null terminator)
+    char *ret = malloc(len + 1);
+    if (ret == NULL)
+        return NULL; // Return NULL if memory allocation fails
 
-    size_t i = 0;
-    while (i < s1Len)
-    {
-        copy[i] = s1[i]; // will copy each byte including NULL terminator
-        i++;
-    }
-    return copy;
+    // Copy the string into the newly allocated memory, including the null terminator
+    ft_strlcpy(ret, s1, len + 1);
+
+    return ret; // Return the duplicated string
 }
+
 int main()
 {
     const char *str = "hello World";

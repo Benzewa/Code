@@ -2,15 +2,8 @@
 #include <stddef.h>
 void *ft_memset(void *b, int c, size_t len)
 {
-    if (b == NULL) // Handle NULL pointer
-        return NULL;
-
     unsigned char *ptr = (unsigned char *)b; // Treat 'b' as a pointer to unsigned char
     unsigned char value = (unsigned char)c;  // Convert 'c' to an unsigned char
-
-    // If len is 0, there's nothing to do, but return the original pointer
-    if (len == 0)
-        return b;
 
     size_t i = 0;
     while (i < len)
@@ -21,6 +14,7 @@ void *ft_memset(void *b, int c, size_t len)
 
     return b; // Return the original pointer
 }
+
 int main()
 {
     // Test 1: Set a string to 'A'

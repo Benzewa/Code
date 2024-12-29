@@ -1,78 +1,80 @@
 #include <stdlib.h>
 
-static size_t	ft_toklen(const char *str, char delimiter)
+// Helper function to count the number of substrings
+static size_t ft_toklen(const char *s, char delimiter)
 {
-	size_t	len;
+	size_t word_count = 0;
+	int in_word = 0; // A flag to check if we are inside a word.
 
-	len = 0;
-	while (str[len] != '\0' && str[len] != delimiter)
+	while (*s)
 	{
-		len++;
+		if (*s != delimiter)
+		{
+			if (!in_word) // We encountered the start of a new word.
+			{
+				in_word = 1;
+				word_count++;
+			}
+		}
+		else
+		{
+			in_word = 0; // We are outside a word now.
+		}
+		s++;
 	}
-	return (len);
+	return word_count;
 }
 
-static void	free_result(char **result, size_t index)
+// Helper function to create a substring
+char *ft_substr(const char *s, size_t start, size_t len)
 {
-	size_t	i;
+	char *substr = malloc(len + 1);
+	if (!substr)
+		return NULL;
+	for (size_t i = 0; i < len; ++i)
+		substr[i] = s[start + i];
+	substr[len] = '\0';
+	return substr;
+}
 
-	i = 0;
-	while (i < index)
+// Main split function
+char **ft_split(const char *s, char delimiter)
+{
+	if (!s)
+		return NULL;
+
+	size_t num_words = ft_toklen(s, delimiter);				  // Number of substrings
+	char **result = malloc((num_words + 1) * sizeof(char *)); // Array for the substrings
+
+	if (!result)
+		return NULL;
+
+	size_t i = 0;
+	size_t start = 0;
+	size_t len = 0;
+
+	while (s[i] != '\0')
 	{
-		free(result[i]);
+		if (s[i] != delimiter)
+		{
+			if (len == 0)
+				start = i; // Mark the start of a new word
+
+			len++; // Increment the length of the current word
+		}
+		else if (len > 0)
+		{
+			// We've reached the end of a word, so allocate and store the substring
+			result[i++] = ft_substr(s, start, len);
+			len = 0; // Reset the length for the next word
+		}
 		i++;
 	}
-	free(result);
-}
 
-char	**ft_split(const char *s, char delimiter)
-{
-	char	**result;
-	size_t	token_count;
-	size_t	index;
-	const char	*temp;
-	size_t	token_length;
+	// Handle the last word if there was no delimiter at the end
+	if (len > 0)
+		result[i++] = ft_substr(s, start, len);
 
-	if (s == NULL)
-		return (NULL);
-	token_count = 0;
-	temp = s;
-	while (*temp != '\0')
-	{
-		while (*temp == delimiter && *temp != '\0')
-			temp++;
-		if (*temp != '\0')
-		{
-			token_count++;
-			while (*temp != delimiter && *temp != '\0')
-				temp++;
-		}
-	}
-	result = malloc(sizeof(char *) * (token_count + 1));
-	if (result == NULL)
-		return (NULL);
-	index = 0;
-	temp = s;
-	while (*temp != '\0')
-	{
-		while (*temp == delimiter && *temp != '\0')
-			temp++;
-		if (*temp != '\0')
-		{
-			token_length = ft_toklen(temp, delimiter);
-			result[index] = malloc(sizeof(char) * (token_length + 1));
-			if (result[index] == NULL)
-			{
-				free_result(result, index);
-				return (NULL);
-			}
-			for (size_t i = 0; i < token_length; i++)
-				result[index][i] = temp[i];
-			result[index][token_length] = '\0';
-			index++;
-			temp += token_length;
-		}
-	}
-	result[index] = NULL;
-	return (result);
+	result[i] = NULL; // Null-terminate the array of strings
+	return result;
 }

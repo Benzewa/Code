@@ -1,27 +1,19 @@
 #include <stddef.h>
 void *ft_memchr(const void *s, int c, size_t n)
 {
-    // Check if the source pointer is NULL or if n is 0
-    if (s == NULL || n == 0)
-    {
-        return NULL;
-    }
-
     unsigned char *ptr = (unsigned char *)s; // Cast `s` to unsigned char pointer
     unsigned char F = (unsigned char)c;      // Convert `c` to unsigned char
 
-    size_t i = 0;
-    while (i < n)
-    { // We check for `n` bytes
-        if (ptr[i] == F)
-        {                   // Compare each byte with `c`
-            return &ptr[i]; // Return a pointer to the first match
-        }
-        i++;
+    while (n--)
+    {
+        if (*ptr == F)
+            return (void *)ptr; // Return the pointer when the byte is found
+        ++ptr;                  // Move to the next byte
     }
 
-    return NULL; // Return NULL if no match found
+    return NULL; // Return NULL if no match is found
 }
+
 #include <stdio.h>
 
 int main()

@@ -3,16 +3,15 @@
 
 size_t ft_strlen(const char *s)
 {
-    // str == NULL means the
-    if (s == NULL)
-    {
-        return (size_t)-1; // handle NULL Pointer
-    }
     size_t length = 0;
+
+    // Handle string length like the second code (no NULL check)
     while (s[length] != '\0')
         length++;
+
     return length;
 }
+
 int main()
 {
     const char *testString = "Hello World";

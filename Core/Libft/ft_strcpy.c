@@ -1,15 +1,14 @@
 #include <stdio.h>
 #include <stddef.h>
+
 size_t ft_strlen(const char *s)
 {
-    // str == NULL means the pointer is not pointer on location in mem
-    if (s == NULL)
-    {
-        return (size_t)-1; // handle NULL Pointer
-    }
     size_t length = 0;
+
+    // Handle string length like the second code (no NULL check)
     while (s[length] != '\0')
         length++;
+
     return length;
 }
 char *ft_strcpy(char *dst, const char *src)

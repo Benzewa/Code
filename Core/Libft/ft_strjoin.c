@@ -1,21 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Function prototypes
-size_t ft_strlen(const char *s);
-char *ft_strjoin(char const *s1, char const *s2);
-
-// Function implementations
-size_t ft_strlen(const char *s)
-{
-    size_t length = 0;
-    while (s[length])
-    {
-        length++;
-    }
-    return length;
-}
-
 char *ft_strjoin(char const *s1, char const *s2)
 {
     // Handle NULL input strings

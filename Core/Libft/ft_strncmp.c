@@ -3,39 +3,22 @@
 
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    // Handle NULL pointers
-    if (s1 == NULL && s2 == NULL)
-    {
-        return 0; // Both are NULL, considered equal
-    }
-    if (s1 == NULL)
-    {
-        return -1; // NULL is considered less than any valid string
-    }
-    if (s2 == NULL)
-    {
-        return 1; // Any valid string is considered greater than NULL
-    }
-
     size_t i = 0;
-    // Compare characters until one string ends or a difference is found
+
     while (i < n && s1[i] != '\0' && s2[i] != '\0')
     {
         if (s1[i] != s2[i])
         {
-            return s1[i] - s2[i]; // Return difference when characters differ
+            return (unsigned char)s1[i] - (unsigned char)s2[i]; // Return the difference when characters differ
         }
         i++;
     }
 
-    // If loop ends (either due to n being reached or one string ending),
-    // return the difference of the current characters.
-    // If both strings are of the same length and no difference is found,
-    // return 0. If n is reached and strings are different, return the
-    // difference between the null terminator of the shorter string and
-    // the corresponding character of the longer string.
-    return s1[i] - s2[i];
+    // If loop ends, either due to reaching n or one of the strings ending,
+    // return the difference between the current characters (null terminators considered)
+    return (unsigned char)s1[i] - (unsigned char)s2[i];
 }
+
 #include <stdio.h>
 
 int main()

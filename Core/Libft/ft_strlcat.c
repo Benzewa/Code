@@ -1,18 +1,6 @@
 #include <stdio.h>
 #include <stddef.h>
 
-// ft_strlen: Returns the length of the string
-size_t ft_strlen(const char *s)
-{
-    if (s == NULL)
-        return 0; // Handle NULL Pointer
-
-    size_t length = 0;
-    while (s[length] != '\0')
-        length++;
-    return length;
-}
-
 size_t strlcat(char *dst, const char *src, size_t dstsize)
 {
     // Handle NULL pointers

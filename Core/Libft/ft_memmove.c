@@ -1,15 +1,14 @@
 #include <stddef.h> // For size_t
 
+
 void *ft_memmove(void *dst, const void *src, size_t len)
 {
+    // Return NULL if either destination or source is NULL
+    if (dst == NULL || src == NULL)
+        return NULL;
+
     unsigned char *dst2 = (unsigned char *)dst;
     unsigned char *src2 = (unsigned char *)src;
-
-    // If the source and destination are the same, do nothing
-    if (dst2 == src2 || len == 0)
-    {
-        return dst;
-    }
 
     // If the source is before the destination, copy backwards to avoid overwriting
     if (src2 < dst2)
@@ -31,6 +30,7 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 
     return dst; // Return the original destination pointer
 }
+
 #include <stdio.h>
 
 int main()

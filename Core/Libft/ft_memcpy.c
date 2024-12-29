@@ -3,16 +3,10 @@
 
 void *ft_memcpy(void *dst, const void *src, size_t n)
 {
-    // Error handling: Check if either dst or src is NULL
-    if (dst == NULL || src == NULL)
+    // Error handling: If both dst and src are NULL, return 0 (consistent with original behavior)
+    if (!dst && !src)
     {
-        return NULL; // Return NULL if either source or destination is NULL
-    }
-
-    // Error handling: If n is 0, no need to copy anything
-    if (n == 0)
-    {
-        return dst; // No operation needed, just return the destination
+        return (0); // Return 0 if both source and destination are NULL
     }
 
     unsigned char *d = dst;
@@ -27,6 +21,7 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
     // Return the original value of dst
     return dst;
 }
+
 #include <stdio.h>
 #include <string.h>
 int main()

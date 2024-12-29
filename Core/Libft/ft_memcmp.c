@@ -1,12 +1,6 @@
 #include <stddef.h>
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    // Check for NULL pointers
-    if (s1 == NULL || s2 == NULL)
-    {
-        return -1; // Return -1 if either pointer is NULL (indicating an error)
-    }
-
     unsigned char *s1Ptr = (unsigned char *)s1; // Cast s1 to unsigned char pointer
     unsigned char *s2Ptr = (unsigned char *)s2; // Cast s2 to unsigned char pointer
 
@@ -22,6 +16,7 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 
     return 0; // Return 0 if all bytes are identical
 }
+
 #include <stdio.h>
 
 int main()
