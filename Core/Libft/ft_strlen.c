@@ -1,30 +1,23 @@
-#include <stdio.h>
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: motaz <mosami@student.42abudhabi.ae>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 08:23:35 by motaz             #+#    #+#             */
+/*   Updated: 2024/12/30 12:07:16 by motaz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-    size_t length = 0;
+	size_t	length;
 
-    // Handle string length like the second code (no NULL check)
-    while (s[length] != '\0')
-        length++;
-
-    return length;
-}
-
-int main()
-{
-    const char *testString = "Hello World";
-    const char *emptyString = "";
-    const char *singleCharString = "He";
-    const char *spaceString = " ";
-    const char *specialCharString = "123 $ \n";
-    const char *NULLString = NULL;
-
-    printf("the size is : %zu\n", ft_strlen(testString));
-    printf("the size is : %zu\n", ft_strlen(emptyString));
-    printf("the size is : %zu\n", ft_strlen(singleCharString));
-    printf("the size is : %zu\n", ft_strlen(spaceString));
-    printf("the size is : %zu\n", ft_strlen(specialCharString));
-    printf("the size is : %zu\n", ft_strlen(NULLString));
+	length = 0;
+	while (s[length] != '\0')
+		length++;
+	return (length);
 }

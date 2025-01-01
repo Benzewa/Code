@@ -1,52 +1,57 @@
-#include <limits.h> // For INT_MAX and INT_MIN
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: motaz <mosami@student.42abudhabi.ae>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 08:21:58 by motaz             #+#    #+#             */
+/*   Updated: 2024/12/30 19:53:05 by motaz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_atoi(const char *str)
+#include "libft.h"
+
+static const char	*skip_whitespace(const char *str)
 {
-    int sign = 1;    // Store the sign of the number
-    long result = 0; // Use a long to avoid overflow during computation
-
-    // Skip leading whitespace characters (space, tabs, newlines, etc.)
-    while (*str == ' ' || (*str >= 9 && *str <= 13))
-        ++str;
-
-    // Handle optional sign (+ or -)
-    if (*str == '+' || *str == '-')
-    {
-        if (*str == '-')
-            sign = -1; // Negative number
-        ++str;         // Move to the next character
-    }
-
-    // Convert the number characters to integer
-    while (*str >= '0' && *str <= '9')
-    {
-        // Update the result with the current digit
-        result = result * 10 + (*str - '0');
-
-        // Check for overflow before casting to int
-        if (result > INT_MAX)
-            return (sign == 1 ? INT_MAX : INT_MIN);
-
-        ++str;
-    }
-
-    // Return the final result, adjusting for the sign
-    return (int)(sign * result);
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	return (str);
 }
 
-#include <stdio.h>
-#include <limits.h>
-
-// Declare the ft_atoi function (you should include your implementation here)
-int ft_atoi(const char *str);
-
-int main()
+static int	handle_sign(const char **str)
 {
-    printf("%d\n", ft_atoi("123"));
-    printf("%d\n", ft_atoi("-123"));
-    printf("%d\n", ft_atoi("  +42abc"));
-    printf("%d\n", ft_atoi("++123"));
-    printf("%d\n", ft_atoi("--123"));
+	int	sign;
 
-    return 0;
+	sign = 1;
+	if (**str == '-')
+	{
+		sign = -1;
+		(*str)++;
+	}
+	else if (**str == '+')
+		(*str)++;
+	return (sign);
+}
+
+int	ft_atoi(const char *str)
+{
+	long	result;
+	int		sign;
+
+	result = 0;
+	str = skip_whitespace(str);
+	sign = handle_sign(&str);
+	while (*str >= '0' && *str <= '9')
+	{
+		result = result * 10 + (*str - '0');
+		if (result > INT_MAX)
+		{
+			if (sign == 1)
+				return (INT_MAX);
+			return (INT_MIN);
+		}
+		str++;
+	}
+	return ((int)(sign * result));
 }

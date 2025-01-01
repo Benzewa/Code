@@ -1,7 +1,18 @@
-#include <stdio.h>
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: motaz <mosami@student.42abudhabi.ae>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 08:22:03 by motaz             #+#    #+#             */
+/*   Updated: 2024/12/30 11:56:34 by motaz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void bzero(void *s, size_t n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
-    ft_memset(s, 0, n);
+	ft_memset(s, 0, n);
 }

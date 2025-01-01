@@ -1,14 +1,20 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: motaz <mosami@student.42abudhabi.ae>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 08:22:48 by motaz             #+#    #+#             */
+/*   Updated: 2024/12/30 11:57:24 by motaz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_putstr_fd(char *s, int fd)
-{
-    if (!s)
-        return;
-    write(fd, s, ft_strlen(s));
-}
+#include "libft.h"
 
-int main()
+void	ft_putstr_fd(char *s, int fd)
 {
-    ft_putstr_fd("Hello, World!\n", 1); // Writes to standard output (stdout)
-    return 0;
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
 }

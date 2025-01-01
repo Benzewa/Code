@@ -1,35 +1,26 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: motaz <mosami@student.42abudhabi.ae>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 08:23:09 by motaz             #+#    #+#             */
+/*   Updated: 2024/12/30 12:06:59 by motaz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strdup(const char *s1)
+#include "libft.h"
+
+char	*ft_strdup(const char *s1)
 {
-    // Get the length of the input string
-    size_t len = ft_strlen(s1);
+	size_t	len;
+	char	*ret;
 
-    // Allocate memory for the duplicate string (+1 for the null terminator)
-    char *ret = malloc(len + 1);
-    if (ret == NULL)
-        return NULL; // Return NULL if memory allocation fails
-
-    // Copy the string into the newly allocated memory, including the null terminator
-    ft_strlcpy(ret, s1, len + 1);
-
-    return ret; // Return the duplicated string
-}
-
-int main()
-{
-    const char *str = "hello World";
-    char *copy = ft_strdup(str);
-
-    if (copy != NULL)
-    {
-        printf("%s\n", copy);
-        free(copy);
-    }
-    else
-    {
-        printf("Memory allocation Failed\n");
-    }
+	len = ft_strlen(s1);
+	ret = malloc(len + 1);
+	if (ret == NULL)
+		return (NULL);
+	ft_strlcpy(ret, s1, len + 1);
+	return (ret);
 }
