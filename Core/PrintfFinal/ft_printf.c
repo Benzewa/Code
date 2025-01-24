@@ -6,13 +6,11 @@
 /*   By: motaz <mosami@student.42abudhabi.ae>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 10:07:46 by motaz             #+#    #+#             */
-/*   Updated: 2025/01/23 08:14:23 by motaz            ###   ########.fr       */
+/*   Updated: 2025/01/23 11:44:12 by motaz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdarg.h>
-#include <unistd.h>
 
 int	ft_conversion(const char type, va_list vargs)
 {
