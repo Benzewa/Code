@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: motaz <mosami@student.42abudhabi.ae>       +#+  +:+       +#+        */
+/*   By: motaz < mosami@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 19:20:24 by motaz             #+#    #+#             */
-/*   Updated: 2025/01/19 19:20:56 by motaz            ###   ########.fr       */
+/*   Updated: 2025/01/31 00:28:10 by motaz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1234
+#  define BUFFER_SIZE 7
 # endif
 
 # include <unistd.h>
