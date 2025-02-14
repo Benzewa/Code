@@ -11,13 +11,12 @@ float GetFraction(float Num);
 int main()
 {
     float Num = 0;
-    for(int i = 0;i < 10;i++)
+    for (int i = 0; i < 10; i++)
     {
         Num = ReadNum("Please enter Num : ");
         cout << "My  Round function : " << MyRound(Num) << "\n";
         cout << "C++ Round Function : " << round(Num) << "\n";
     }
-
 }
 float ReadNum(string Message)
 {
@@ -30,17 +29,16 @@ int MyRound(float Num)
 {
     int IntPart = int(Num);
     float FractionPart = GetFraction(Num);
-    if(abs(FractionPart) >= 0.5)
+    if (abs(FractionPart) >= 0.5)
     {
-        if(Num > 0)
+        if (Num > 0)
             return ++IntPart;
         else
             return --IntPart;
     }
     else
         return IntPart; // this also handles the zero
-    return 0; // this also handles the zero
-
+    return 0;           // this also handles the zero
 }
 float GetFraction(float Num)
 {
