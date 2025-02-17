@@ -1,3 +1,6 @@
+// C7 vid 1
+// 3 x 3 Random Matrix
+
 #include <iostream>
 #include <cstdlib>
 #include <ctime>

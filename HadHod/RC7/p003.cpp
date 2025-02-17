@@ -1,3 +1,6 @@
+// C7 vid 2
+// Row Sum of an Array
+
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
