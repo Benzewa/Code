@@ -1,64 +1,55 @@
-// C7 vid 5
-// Col Sum of an Array
-
 #include <iostream>
 #include <cstdlib>
-#include <iomanip>
 #include <ctime>
+#include <iomanip>
 using namespace std;
 
 int Random(int From, int To);
-void FillArray(int Arr[3][3], int Row, int Col);
-void PrintArray(int Arr[3][3], int Row, int Col);
-void PrintColSum(int Arr[3][3], int Row, int Col);
-int ColSum(int Arr[3][3], int Row, int ColNum);
+void FillArr(int Arr[3][3], int Rows, int Cols);
+void PrintArr(int Arr[3][3], int Rows, int Cols);
 
 int main()
 {
-    int ArrSrc[3][3];
-    FillArray(ArrSrc, 3, 3);
-    PrintArray(ArrSrc, 3, 3);
-    PrintColSum(ArrSrc, 3, 3);
+    srand((unsigned)time(NULL));
+    cout << "Hello World\n";
 }
-
 int Random(int From, int To)
 {
     return (rand() % (To - From + 1) + From);
 }
-void FillArray(int Arr[3][3], int Row, int Col)
+void FillArrSrc(int Arr[3][3], int Rows, int Cols)
 {
-    for (int i = 0; i < Row; i++)
+    for (int i = 0; i < Rows; i++)
     {
-        for (int j = 0; j < Col; j++)
+        for (int j = 0; j < Cols; j++)
         {
-            Arr[i][j] = Random(1, 5);
+            Arr[i][j] = Random(1, 50);
         }
     }
 }
-void PrintArray(int Arr[3][3], int Row, int Col)
+void PrintArr(int Arr[3][3], int Rows, int Cols)
 {
-    for (int i = 0; i < Row; i++)
+    for (int i = 0; i < Rows; i++)
     {
-        for (int j = 0; j < Col; j++)
+        for (int j = 0; j < Cols; j++)
         {
             cout << setw(3) << Arr[i][j] << " ";
         }
         cout << "\n";
     }
 }
-void PrintColSum(int Arr[3][3], int Row, int Col)
+void FillArrDes(int ArrSrc[3][3], int Rows, int Cols, int ArrDes[3])
 {
-    for (int j = 0; j < Col; j++)
+    for (int j = 0; j < Cols; j++)
     {
-        cout << "Col " << j + 1 << " Sum : " << ColSum(Arr, Row, j) << "\n";
     }
 }
-int ColSum(int Arr[3][3], int Row, int ColNum)
+int ColSum(int Arr[3][3], int Rows, int ColNum)
 {
     int Sum = 0;
-    for (int i = 0; i < Row; i++)
+    for (int i = 0; i < Rows; i++)
     {
         Sum += Arr[i][ColNum];
     }
-    return Sum;
+    return (Sum);
 }

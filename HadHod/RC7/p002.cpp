@@ -62,5 +62,5 @@ int RowSum(int Arr[3][3], int RowNumber, int Col)
     {
         Sum += Arr[RowNumber][j];
     }
-    return Sum;
+    return (Sum);
 }

@@ -1,75 +1,67 @@
-// C7 vid 3
-// Row Sum of an Array in A different Array
-
 #include <iostream>
 #include <cstdlib>
-#include <iomanip>
 #include <ctime>
+#include <iomanip>
 using namespace std;
 
-int Random(int From, int To);
-void FillArray(int Arr[3][3], int Row, int Col);
-void PrintArray(int Arr[3][3], int Row, int Col);
-void PrintRowSum(int Arr[3][3], int Row, int Col, int Arr2[3]);
-int RowSum(int Arr[3][3], int RowNum, int Col);
-void PrintArrDes(int Arr[3], int Row);
+int RandomNumber(int From, int To);
+void FillArr(int Arr1[3][3], int Rows, int Cols);
+void PrintArr(int Arr1[3][3], int Rows, int Cols);
+void PrintColSum(int Arr1[3][3], int Rows, int Cols);
+int ColSum(int Arr1[3][3], int Rows, int ColNumber);
 
 int main()
 {
-    int ArrSrc[3][3];
-    int ArrDes[3];
-    FillArray(ArrSrc, 3, 3);
-    PrintArray(ArrSrc, 3, 3);
-    PrintRowSum(ArrSrc, 3, 3, ArrDes);
-    cout << "\n";
-    PrintArrDes(ArrDes, 3);
+    srand((unsigned)time(NULL));
+    int ArrSrc[3][3] = {0};
+    int ArrDes[3] = {0};
+    FillArr(ArrSrc, 3, 3);
+    PrintArr(ArrSrc, 3, 3);
+    PrintColSum(ArrSrc, 3, 3);
 }
 
-int Random(int From, int To)
+int RandomNumber(int From, int To)
 {
     return (rand() % (To - From + 1) + From);
 }
-void FillArray(int Arr[3][3], int Row, int Col)
+
+void FillArr(int Arr1[3][3], int Rows, int Cols)
 {
-    for (int i = 0; i < Row; i++)
+    for (int i = 0; i < Rows; i++)
     {
-        for (int j = 0; j < Col; j++)
+        for (int j = 0; j < Cols; j++)
         {
-            Arr[i][j] = Random(1, 5);
+            Arr1[i][j] = RandomNumber(10, 50);
         }
     }
 }
-void PrintArray(int Arr[3][3], int Row, int Col)
+
+void PrintArr(int Arr1[3][3], int Rows, int Cols)
 {
-    for (int i = 0; i < Row; i++)
+    for (int i = 0; i < Rows; i++)
     {
-        for (int j = 0; j < Col; j++)
+        for (int j = 0; j < Cols; j++)
         {
-            cout << setw(3) << Arr[i][j] << " ";
+            cout << setw(3) << Arr1[i][j] << " ";
         }
         cout << "\n";
     }
 }
-void PrintRowSum(int Arr[3][3], int Row, int Col, int Arr2[3])
+
+void PrintColSum(int Arr1[3][3], int Rows, int Cols)
 {
-    for (int i = 0; i < Row; i++)
+    for (int j = 0; j < Cols; j++)
     {
-        Arr2[i] = RowSum(Arr, i, Col);
+        cout << "Col Num " << j + 1 << " : " << ColSum(Arr1, Rows, j) << "\n";
     }
 }
-int RowSum(int Arr[3][3], int RowNum, int Col)
+
+int ColSum(int Arr1[3][3], int Rows, int ColNumber)
 {
     int Sum = 0;
-    for (int j = 0; j < Col; j++)
+    for (int i = 0; i < Rows; i++)
     {
-        Sum += Arr[RowNum][j];
+        Sum += Arr1[i][ColNumber];
     }
     return (Sum);
-}
-void PrintArrDes(int Arr[3], int Row)
-{
-    for (int i = 0; i < Row; i++)
-    {
-        cout << Arr[i] << "\n";
-    }
 }
