@@ -23,8 +23,7 @@ void FillArrSrc(int ArrSrc[3][3], int Rows, int Cols)
     {
         for (int j = 0; j < Cols; j++)
         {
-            ArrSrc[i][j] = x;
-            x++;
+            ArrSrc[i][j] = x++;
         }
     }
 }
