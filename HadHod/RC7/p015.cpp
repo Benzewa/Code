@@ -1,30 +1,27 @@
-// vid 10
-// Fill a 3 x 3 Random Matrix then Print the Sum of All elements
+// vid 11
+// Compare Two matrices and check if the Sum is equal or not (return)
 
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 #include <iomanip>
+#include <ctime>
+#include <cstdlib>
 
 int Random(int From, int To);
 void FillArr(int Arr[3][3], int Rows, int Cols);
 void PrintArr(int Arr[3][3], int Rows, int Cols);
-int SumArr(int Arr[3][3], int Rows, int Cols);
+int ArrSum(int Arr[3][3], int Rows, int Cols);
+bool AreTheyEqual(int ArrOne[3][3], int ArrTwo[3][3], int Rows, int Cols);
 
 int main()
 {
-    srand((unsigned)time(NULL));
     int ArrOne[3][3] = {0};
-
-    FillArr(ArrOne, 3, 3);
-    std::cout << "Arr : ";
-    std::cout << "\n";
-    PrintArr(ArrOne, 3, 3);
-    std::cout << "\n";
-    std::cout << "Sum : " << SumArr(ArrOne, 3, 3);
-    std::cout << "\n";
+    int ArrTwo[3][3] = {0};
+    // FillArr(ArrOne, 3, 3);
+    if (AreTheyEqual(ArrOne, ArrTwo, 3, 3))
+        std::cout << "They are Equal.\n";
+    else
+        std::cout << "They are Not Equal!!\n";
 }
-
 int Random(int From, int To)
 {
     return (rand() % (To - From + 1) + From);
@@ -35,7 +32,7 @@ void FillArr(int Arr[3][3], int Rows, int Cols)
     {
         for (int j = 0; j < Cols; j++)
         {
-            Arr[i][j] = Random(0, 5);
+            Arr[i][j] = Random(0, 2);
         }
     }
 }
@@ -50,7 +47,7 @@ void PrintArr(int Arr[3][3], int Rows, int Cols)
         std::cout << "\n";
     }
 }
-int SumArr(int Arr[3][3], int Rows, int Cols)
+int ArrSum(int Arr[3][3], int Rows, int Cols)
 {
     int Sum = 0;
     for (int i = 0; i < Rows; i++)
@@ -61,4 +58,8 @@ int SumArr(int Arr[3][3], int Rows, int Cols)
         }
     }
     return (Sum);
+}
+bool AreTheyEqual(int ArrOne[3][3], int ArrTwo[3][3], int Rows, int Cols)
+{
+    return (ArrSum(ArrOne, 3, 3) == ArrSum(ArrTwo, 3, 3));
 }

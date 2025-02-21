@@ -1,5 +1,5 @@
-// vid 10
-// Fill a 3 x 3 Random Matrix then Print the Sum of All elements
+// vid 12
+// Compare Two matrices and check if they are typical (Flag)
 
 #include <iostream>
 #include <cstdlib>
@@ -9,22 +9,25 @@
 int Random(int From, int To);
 void FillArr(int Arr[3][3], int Rows, int Cols);
 void PrintArr(int Arr[3][3], int Rows, int Cols);
-int SumArr(int Arr[3][3], int Rows, int Cols);
+bool AreTypicalMatrices(int ArrOne[3][3], int ArrTwo[3][3], int Rows, int Cols);
 
 int main()
 {
     srand((unsigned)time(NULL));
     int ArrOne[3][3] = {0};
+    int ArrTwo[3][3] = {0};
 
-    FillArr(ArrOne, 3, 3);
-    std::cout << "Arr : ";
-    std::cout << "\n";
+    // FillArr(ArrOne, 3, 3);
+    // FillArr(ArrTwo, 3, 3);
+    std::cout << "First Array :\n";
     PrintArr(ArrOne, 3, 3);
-    std::cout << "\n";
-    std::cout << "Sum : " << SumArr(ArrOne, 3, 3);
-    std::cout << "\n";
+    std::cout << "Second Array :\n";
+    PrintArr(ArrTwo, 3, 3);
+    if (AreTypicalMatrices(ArrOne, ArrTwo, 3, 3))
+        std::cout << "Matrices Are Typical\n";
+    else
+        std::cout << "Matrices Are Not Typical\n";
 }
-
 int Random(int From, int To)
 {
     return (rand() % (To - From + 1) + From);
@@ -50,15 +53,15 @@ void PrintArr(int Arr[3][3], int Rows, int Cols)
         std::cout << "\n";
     }
 }
-int SumArr(int Arr[3][3], int Rows, int Cols)
+bool AreTypicalMatrices(int ArrOne[3][3], int ArrTwo[3][3], int Rows, int Cols)
 {
-    int Sum = 0;
     for (int i = 0; i < Rows; i++)
     {
         for (int j = 0; j < Cols; j++)
         {
-            Sum += Arr[i][j];
+            if (ArrOne[i][j] != ArrTwo[i][j])
+                return false;
         }
     }
-    return (Sum);
+    return true;
 }
