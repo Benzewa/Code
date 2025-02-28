@@ -2,14 +2,14 @@
 // Program that counts a number in a matrix
 
 #include <iostream>
-#include <cstdlib>
 #include <ctime>
 #include <iomanip>
+#include <cstdlib>
 
 int Random(int From, int To);
 void FillArr(int Arr[3][3], int Rows, int Cols);
 void PrintArr(int Arr[3][3], int Rows, int Cols);
-int CountMatrixElements(int Arr[3][3], int Rows, int Cols);
+int CountElements(int Rows, int Cols);
 
 int main()
 {
@@ -17,8 +17,7 @@ int main()
     int ArrSrc[3][3] = {0};
     FillArr(ArrSrc, 3, 3);
     PrintArr(ArrSrc, 3, 3);
-    std::cout << std::setw(3) << "Number of Matrix Elements : ";
-    std::cout << CountMatrixElements(ArrSrc, 3, 3) << "\n";
+    std::cout << "Number of Elements of Array : " << CountElements(3, 3) << "\n";
 }
 int Random(int From, int To)
 {
@@ -30,7 +29,7 @@ void FillArr(int Arr[3][3], int Rows, int Cols)
     {
         for (int j = 0; j < Cols; j++)
         {
-            Arr[i][j] = Random(0, 5);
+            Arr[i][j] = Random(0, 1);
         }
     }
 }
@@ -45,15 +44,15 @@ void PrintArr(int Arr[3][3], int Rows, int Cols)
         std::cout << "\n";
     }
 }
-int CountMatrixElements(int Arr[3][3], int Rows, int Cols)
+int CountElements(int Rows, int Cols)
 {
-    int Counter = 0;
+    int Sum = 0;
     for (int i = 0; i < Rows; i++)
     {
         for (int j = 0; j < Cols; j++)
         {
-            Counter++;
+            Sum++;
         }
     }
-    return (Counter);
+    return (Sum);
 }
