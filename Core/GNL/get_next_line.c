@@ -35,7 +35,7 @@ char *read_first_line(int fd, char *text)
 	while (bytes_read > 0)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
-		if (bytes_read == -1)
+		if (bytes_read == -1) // '\0' , File is not existing , fd is incorrect
 		{
 			free(text);
 			free(buffer);
@@ -58,16 +58,16 @@ char *get_line_test(char *text)
 	i = 0;
 	if (!text[i])
 		return (NULL);
-	while (text[i] && text[i] != '\n')
+	while (text[i] != '\0' && text[i] != '\n')
 		i++;
 	str = ft_calloc(i + 2, sizeof(char));
 	i = 0;
-	while (text[i] && text[i] != '\n')
+	while (text[i] != '\0' && text[i] != '\n')
 	{
 		str[i] = text[i];
 		i++;
 	}
-	if (text[i] && text[i] == '\n')
+	if (text[i] != '\0' && text[i] == '\n')
 		str[i++] = '\n';
 	return (str);
 }
@@ -80,7 +80,7 @@ char *clean_first_line(char *text)
 
 	i = 0;
 	j = 0;
-	while (text[i] && text[i] != '\n')
+	while (text[i] != '\0' && text[i] != '\n')
 		i++;
 	if (!text[i])
 	{
