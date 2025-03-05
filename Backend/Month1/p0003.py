@@ -9,3 +9,6 @@ StringTwo = StringOne.upper()
 print("String Two : " + StringTwo)
 StringTwo.strip() # remove the whitespaces before and after the string
 print(StringTwo.find("SA"))
+print(StringTwo.replace("S" , "T"))
+print("AMI" in StringTwo)
+print("AMI" not in StringTwo)
