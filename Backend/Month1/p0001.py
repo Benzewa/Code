@@ -17,3 +17,18 @@ print(CourseName[0])
 print(CourseName[5])
 print(CourseName[-1])
 print(CourseName[0:3])
+print("\n\n")
+
+# String
+# escape Sequence
+# \"
+# \'
+# \\
+# \n
+# print("Programming \"Course\n")
+First = "Moutaz"
+Last = "Sami"
+# concatination
+FullName = First + " " + Last
+print("\n")
+print(FullName)
