@@ -5,3 +5,5 @@ for i in "Python":
     print({i})
 for i in "Python":
     print(i)
+
+# min 1:38 2hrs mosh video
