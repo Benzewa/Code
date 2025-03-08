@@ -1,35 +1,34 @@
 // vid 8
-// Multiply 2 matrices and save the product in a New Array
+// program that multiplies Matrix 1 and Matrix 2 then store the product in Matrix3
 
 #include <iostream>
-#include <cstdlib>
 #include <ctime>
 #include <iomanip>
+#include <cstdlib>
 
 int Random(int From, int To);
 void FillArr(int Arr[3][3], int Rows, int Cols);
 void PrintArr(int Arr[3][3], int Rows, int Cols);
-void FillProductArr(int ArrOne[3][3], int ArrTwo[3][3], int ArrPro[3][3], int Rows, int Cols);
+void ProductArray(int ArrOne[3][3], int ArrTwo[3][3], int ArrProd[3][3], int Rows, int Cols);
 
 int main()
 {
     srand((unsigned)time(NULL));
     int ArrOne[3][3] = {0};
     int ArrTwo[3][3] = {0};
-    int ArrPro[3][3] = {0};
+    int ArrProduct[3][3] = {0};
 
-    // Fill Arrays and Fill Product Array
     FillArr(ArrOne, 3, 3);
-    FillArr(ArrTwo, 3, 3);
-    FillProductArr(ArrOne, ArrTwo, ArrPro, 3, 3);
-
-    // Print Arrays
-    printf("Array One : \n");
+    printf("Array One :\n");
     PrintArr(ArrOne, 3, 3);
-    printf("Array Two : \n");
+
+    FillArr(ArrTwo, 3, 3);
+    printf("Array Two :\n");
     PrintArr(ArrTwo, 3, 3);
-    printf("Array Product : \n");
-    PrintArr(ArrPro, 3, 3);
+
+    ProductArray(ArrOne, ArrTwo, ArrProduct, 3, 3);
+    printf("Array Three :\n");
+    PrintArr(ArrProduct, 3, 3);
 }
 int Random(int From, int To)
 {
@@ -51,18 +50,18 @@ void PrintArr(int Arr[3][3], int Rows, int Cols)
     {
         for (int j = 0; j < Cols; j++)
         {
-            printf("%02d ", Arr[i][j]);
+            std::cout << std::setw(3) << Arr[i][j] << " ";
         }
-        printf("\n");
+        std::cout << "\n";
     }
 }
-void FillProductArr(int ArrOne[3][3], int ArrTwo[3][3], int ArrPro[3][3], int Rows, int Cols)
+void ProductArray(int ArrOne[3][3], int ArrTwo[3][3], int ArrProd[3][3], int Rows, int Cols)
 {
     for (int i = 0; i < Rows; i++)
     {
         for (int j = 0; j < Cols; j++)
         {
-            ArrPro[i][j] = (ArrOne[i][j] * ArrTwo[i][j]);
+            ArrProd[i][j] = (ArrOne[i][j] * ArrTwo[i][j]);
         }
     }
 }
