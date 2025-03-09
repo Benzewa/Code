@@ -50,7 +50,7 @@ void PrintArr(int Arr[3][3], int Rows, int Cols)
     {
         for (int j = 0; j < Cols; j++)
         {
-            std::cout << std::setw(3) << Arr[i][j] << " ";
+            printf("%02d ", Arr[i][j]);
         }
         std::cout << "\n";
     }
