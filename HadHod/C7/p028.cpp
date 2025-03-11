@@ -21,7 +21,7 @@ int main()
 
 int Random(int From, int To)
 {
-    return 
+    return
 }
 void FillArr(int Arr[3][3], int Rows, int Cols);
 void PrintArr(int Arr[3][3], int Rows, int Cols);
