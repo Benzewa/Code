@@ -11,7 +11,7 @@ void FillRevArr(int ArrOne[3][3], int ArrTwo[3][3], int Rows, int Cols);
 
 int main()
 {
-    int ArrOne[3][3] = {{0, 4, 0}, {4, 0, 4}, {2, 9, 2}};
+    int ArrOne[3][3] = {{0, 4, 0}, {4, 0, 4}, {1, 9, 2}};
     int ArrTwo[3][3] = {0};
     FillRevArr(ArrOne, ArrTwo, 3, 3);
     if (isPalindrome(ArrOne, ArrTwo, 3, 3))
