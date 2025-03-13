@@ -6,24 +6,26 @@
 #include <iomanip>
 #include <cstdlib>
 
-void Fibonacci(int Number);
+void PrintFibonacci(int Number);
 
 int main()
 {
-    Fibonacci(10);
+    PrintFibonacci(10);
 }
-// 1 1 2 3 5 8 13
-void Fibonacci(int Number)
+void PrintFibonacci(int Num)
 {
-    int Prev1 = 0;
-    int Prev2 = 0;
-    int FabNum = 0;
+    int FebNum = 0;
+    int PrevOne = 1;
+    int PrevTwo = 0;
     std::cout << "1 ";
-    for (int i = 2; i <= Number; i++)
+    for (int i = 2; i <= Num; i++)
     {
-        FabNum = Prev1 + Prev2;
-        std::cout << FabNum << " ";
-        Prev1 = Prev2;
-        Prev2 = FabNum;
+        FebNum = PrevOne + PrevTwo;
+        if (i != Num)
+            std::cout << FebNum << " ";
+        else
+            std::cout << FebNum;
+        PrevTwo = PrevOne;
+        PrevOne = FebNum;
     }
 }
